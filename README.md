@@ -52,6 +52,11 @@ Website template in Node.js
     deployed website.  We need to keep things predictable.
 
 
+## run
+
+    node server.js
+    http://localhost:3000
+
 ## Contributing
 
 Contributions welcome!  
