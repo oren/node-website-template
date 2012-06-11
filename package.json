@@ -1,0 +1,17 @@
+{
+  "author": "",
+  "name": "website",
+  "description": "site with no frameworks",
+  "version": "0.0.0",
+  "dependencies": {
+    "ejs": "~0.7.1",
+    "error-page": "~0.0.3",
+    "mapleTree": "~0.1.8",
+    "templar": "~0.0.6"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}
