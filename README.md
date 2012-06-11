@@ -51,8 +51,19 @@ Website template in Node.js
     Every time you add a dependency, check it into git.  This is a
     deployed website.  We need to keep things predictable.
 
+## WHY U NO USE EXPRESS?
 
-## run
+express is a great framework but what most people need is to route urls to some functions.
+we accomplish that by using a simple routing module - mabpleTree. it's fast and simple.
+
+## modules being used
+
+        templar - agnostic templating
+        ejs - js templates
+        error-page - send error pages
+        mapleTree - routing
+
+## Run
 
     node server.js
     http://localhost:3000
