@@ -53,23 +53,23 @@ Website template in Node.js
 
 ## WHY U NO USE EXPRESS?
 
-express is a great framework but what most people need is to route urls to some functions.
+express is a great framework but what most people need is to route urls to some functions.  
 we accomplish that by using a simple routing module - mabpleTree. it's fast and simple.
 
 ## Folders Structure
 
-    server.js          # the starting point of our server
+    server.js             # the starting point of our server
 
-    routes/            # each request will ended up in one of those
-      home.js          # request for '/'
-      static.js        # request for static files
+    routes/               # each request will ended up in one of those
+      home.js             # request for '/'
+      static.js           # request for static files
 
-    models/            # getting and saving stuff in our DB 
-      all-contacts.js  # getting all contacts
-      contacts.json    #  our DB - a few contacts
+    models/               # getting and saving stuff in our DB 
+      all-contacts.js     # getting all contacts
+      contacts.json       #  our DB - a few contacts
 
-    templates/         # UI stuff
-      home.ejs         # homepage - showing list of users
+    templates/            # UI stuff
+      home.ejs            # homepage - showing list of users
       contact-partial.ejs # each contact
 
     test/              # nothing there for now
