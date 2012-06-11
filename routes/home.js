@@ -1,5 +1,6 @@
 module.exports = home;
 
+// getting our contacts from the 'database' - contacts.json
 var allContacts = require("../models/all-contacts.js")
 
 function home (req, res) {

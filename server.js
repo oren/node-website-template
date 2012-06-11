@@ -1,7 +1,5 @@
 //core modules
 var http = require('http');
-var path = require('path');
-var fs = require('fs');
 
 //non-core modules
 var mapleTree = require('mapleTree');
@@ -14,22 +12,10 @@ var templarOptions = { engine: config.engine, folder: config.templates };
 var router = new mapleTree.RouteTree();
 Templar.loadFolder('./templates')
 
-// home route
+// route home
 router.define( '/', require('./routes/home.js') );
-
 // route static files
-router.define('/*', function (req, res) {
-  var file = path.join('public', req.url)
-
-  fs.readFile(file, function (err, data) {
-    if (err) {
-      res.statusCode = 404;
-      return res.end();
-    }
-
-    res.end(data);
-  })
-})
+router.define( '/*', require('./routes/static.js') )
 
 // request goes here
 http.createServer(function(req, res) {
