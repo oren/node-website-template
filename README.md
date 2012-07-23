@@ -72,7 +72,9 @@ we accomplish that by using a simple routing module - mabpleTree. it's fast and 
       home.ejs            # homepage - showing list of users
       contact-partial.ejs # each contact
 
-    test/              # nothing there for now
+    test/             
+      end2end                 # full stack, end-to-end tests
+        home.js
 
 ## modules being used
 
