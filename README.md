@@ -82,6 +82,7 @@ we accomplish that by using a simple routing module - mabpleTree. it's fast and 
         ejs - js templates
         error-page - send error pages
         mapleTree - routing
+        zombie.js - end2end testing
 
 ## Run
 
