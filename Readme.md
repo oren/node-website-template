@@ -8,6 +8,7 @@
 * [Modules being used](#modules-being-used)
 * [Run](#run)
 * [Test](#test)
+* [Deploy](#deploy)
 * [Misc](#misc)
 
 ## Design Philosophy:
@@ -23,7 +24,7 @@
 
 ## Why can't you use express?
 
-express is a great framework but you usually need is to route urls to functions and if you are building a website and not just an API you can simply add a templating engine. Everything you need can be done by adding a simple node module that can easily be replaced or removed if needed.
+express is a great framework but all you usually need is to route urls to functions and if you are building a website and not just an API you can simply add a templating engine. Most of things that you would need probably exist in someone's module. The only challenge is to find it. And I hope that this codebase would help a little bit.
 
 There are two drawback for using expresss. The first is connect/middleware - every middleware you add is being added to each request to your server even if not all the requests needs it. The second drawback is it doesn't play nice with stream - one of the core aspects of Node.  
 
@@ -67,13 +68,20 @@ There are two drawback for using expresss. The first is connect/middleware - eve
 
 ## Test
 
-I use [tape](https://github.com/substack/tape), substack's minimalist test library. Server and client side code. 
+I use [tape](https://github.com/substack/tape), substack's minimalist test library. Server and client side code.  I wrote about it [here](https://github.com/oren/oren.github.com/blob/master/posts/tape/tape.md) if you havn't heard about it.
 
     npm test               # use tape binary to run all tests
 
 or
 
     node test/home.js      # run a single test
+
+## Deploy
+
+I use [deploy](https://github.com/visionmedia/deploy), a 400 lines bash script written by TJ Holowaychuk. [Here](https://github.com/oren/oren.github.com/blob/master/posts/deploy.md) is my quick blog post about it.
+
+    bin/deploy qa         # deploy to qa host
+    bin/deploy prod       # deploy to prod host
 
 ## Misc
 
