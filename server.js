@@ -6,7 +6,7 @@ process.title = 'node-website-template';
 var http = require('http');
 
 //non-core modules
-var router = require('routes')();
+var router = require('./router.js');
 var ErrorPage = require('error-page');
 var Templar = require('templar');
 
@@ -15,16 +15,9 @@ var config = require('./config/' + environment + '.js');
 var templarOptions = { engine: config.engine, folder: config.templates };
 Templar.loadFolder(config.templates);
 
-var assets = require('./routes/static.js')
-
-router.addRoute('/*', assets)
-router.addRoute('/', require('./routes/home.js'))
-
 // request goes here
 var server = http.createServer(function(req, res) {
   
-  console.log(req.url);
- 
   res.error = ErrorPage(req, res, {
     404: 'not found!'
   });

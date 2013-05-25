@@ -35,6 +35,8 @@ There are two drawback for using expresss. The first is connect/middleware - eve
 ```
 server.js              # the starting point of our server
 
+router.js              # map urls to functions
+
 routes/                # each request will ended up in one of those
   home.js              # request for '/'
   static.js            # request for static files
@@ -58,6 +60,8 @@ test/
 bin/
   deploy               # deploy script
   restart              # post-deploy script
+
+deploy.conf            # deployment config file
 ```
 
 ## Modules being used
