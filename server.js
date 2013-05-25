@@ -1,6 +1,6 @@
 'use strict';
 
-// process.title = 'node-website-template';
+process.title = 'node-website-template';
 
 //core modules
 var http = require('http');
