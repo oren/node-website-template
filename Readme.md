@@ -29,22 +29,27 @@ There are two drawback for using expresss. The first is connect/middleware - eve
 
 ## Folders structure
 
-    server.js             # the starting point of our server
+    server.js              # the starting point of our server
 
-    routes/               # each request will ended up in one of those
-      home.js             # request for '/'
-      static.js           # request for static files
+    routes/                # each request will ended up in one of those
+      home.js              # request for '/'
+      static.js            # request for static files
 
-    models/               # getting and saving stuff in our DB 
-      all-contacts.js     # getting all contacts
-      contacts.json       #  our DB - a few contacts
+    models/                # getting and saving stuff in our DB 
+      all-contacts.js      # getting all contacts
+      contacts.json        #  our DB - a few contacts
 
-    templates/            # UI stuff
-      home.ejs            # homepage - showing list of users
-      contact-partial.ejs # each contact
-
+    templates/             # UI stuff
+      home.ejs             # homepage - showing list of users
+      contact-partial.ejs  # each contact
+ 
+ 		config/                # single entry point for dependencies:
+      development.js       # hostnames, dbs, external api etc
+      prod.js               
+ 			test.js
+      
     test/             
-      home.js             # unit tests with tape
+      home.js              # unit tests with tape
 
 ## Modules being used
 
