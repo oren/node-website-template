@@ -43,7 +43,7 @@ There are two drawback for using expresss. The first is connect/middleware - eve
       home.ejs             # homepage - showing list of users
       contact-partial.ejs  # each contact
  
- 		config/                # single entry point for dependencies:
+    config/                # single entry point for dependencies:
       development.js       # hostnames, dbs, external api etc
       prod.js               
  			test.js
