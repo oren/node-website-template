@@ -21,7 +21,7 @@ router.addRoute('/*', assets)
 router.addRoute('/', require('./routes/home.js'))
 
 // request goes here
-http.createServer(function(req, res) {
+var server = http.createServer(function(req, res) {
 
   res.error = ErrorPage(req, res, {
     404: 'not found!'
@@ -29,8 +29,19 @@ http.createServer(function(req, res) {
   res.template = Templar(req, res, templarOptions);
   router.match(req.url).fn(req, res);
 
-}).listen(config.port, function() {
-  console.log('Server Listening on Port ' + config.port + '. ' + environment + ' environment');
 });
 
+// if this file is run directly - node server.js
+if (module === require.main) {
+  server.listen(config.port, function() {
+    console.log('Server Listening on Port ' + config.port + '. ' + environment + ' environment');
+  });
+} else {
+  module.exports.start = function(cb) {
+    server.listen(config.port, function() {
+      console.log('Server Listening on Port ' + config.port + '. ' + environment + ' environment');
+      cb(null);
+    });
+  }
+};
 
