@@ -19,10 +19,13 @@ router.define( '/*', require('./routes/static.js') )
 
 // request goes here
 http.createServer(function(req, res) {
+
   res.error = ErrorPage(req, res, {});
   res.template = Templar(req, res, templarOptions);
-
   router.match(req.url).fn(req, res);
 
-}).listen(process.env.PORT || config.port);
+}).listen(process.env.PORT || config.port, function(){
+  console.log('Server Listening on Port 3000. development environment');
+});
+
 
