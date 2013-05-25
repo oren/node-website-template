@@ -7,10 +7,11 @@
     "ejs": "~0.7.1",
     "error-page": "~0.0.3",
     "templar": "~0.0.6",
-    "routes": "~0.2.0",
-    "zombie": "~2.0.0-alpha18"
+    "routes": "~0.2.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "tape": "~1.0.2"
+  },
   "optionalDependencies": {},
   "engines": {
     "node": "*"

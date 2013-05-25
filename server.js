@@ -2,7 +2,7 @@
 var http = require('http');
 
 //non-core modules
-var ErrorPage = require('error-page');
+// var ErrorPage = require('error-page');
 var Templar = require('templar');
 var ejs = require('ejs');
 
