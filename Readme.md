@@ -1,5 +1,7 @@
 # Website template in Node.js
 
+![puzzle](http://i.imgur.com/8orBBZu.png)
+
 ## Index
 
 * [Design Philosophy](#design-philosophy)
