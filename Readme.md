@@ -60,11 +60,11 @@ There are two drawback for using expresss. The first is connect/middleware - eve
 
 ## Modules being used
 
-        routes - routing
-        templar - agnostic templating
-        ejs - js templates
-        error-page - send error pages
-        tape - unit tests
+* [routes](https://github.com/aaronblohowiak/routes.js) - routing
+* [templar](https://github.com/isaacs/templar) - agnostic templating
+* [ejs](https://github.com/visionmedia/ejs) - js templates
+* [error-page](https://github.com/isaacs/error-page) - send error pages
+* [tape](https://github.com/substack/tape) - browser and server unit tests
         
 ## Run
 
