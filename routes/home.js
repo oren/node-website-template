@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = home;
 
 // getting our contacts from the 'database' - contacts.json

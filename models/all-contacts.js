@@ -1,4 +1,6 @@
-module.exports = allContacts
+'use strict';
+
+module.exports = allContacts;
 
 var path = require("path")
 var contacts_file = path.resolve(__dirname, "contacts.json")

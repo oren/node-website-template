@@ -58,4 +58,21 @@ or
 
     node test/home.js      # run a single test
 
+### Code Guidelines
+
+* Node Style Guide - http://nodeguide.com/style.html
+* `'use strict';` at the top of every js file
+
+
+### status codes
+
+200 - ok  
+201 - created  
+202 - accepted  
+400 - bad request  
+401 - unauthorized  
+404 - not found  
+405 - method not allowed  
+500 - server error  
+
 #### Contributions welcome!  
