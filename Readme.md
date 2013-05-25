@@ -68,6 +68,7 @@ deploy.conf            # deployment config file
 * [routes](https://github.com/aaronblohowiak/routes.js) - routing
 * [templar](https://github.com/isaacs/templar) - agnostic templating
 * [ejs](https://github.com/visionmedia/ejs) - js templates
+* [st](https://github.com/isaacs/st) - serving static files
 * [error-page](https://github.com/isaacs/error-page) - send error pages
 * [tape](https://github.com/substack/tape) - browser and server unit tests
         

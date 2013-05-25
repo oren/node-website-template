@@ -43,15 +43,8 @@
     </li>
   </ul>
 
-  <h4>displaying info from our database (json file):</h4>
 
-  <ul>
-    <% contacts.forEach(function (contact) {
-      %>
-      <li><%- include('contact-partial.ejs', contact) %></li>
-      <%
-    }) %>
-  </ul>
+  <% include contact-partial %></li>
 
   <script src="public/js/app.js"></script>
 </body>

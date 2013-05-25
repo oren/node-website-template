@@ -1,16 +1,10 @@
 'use strict';
 
-module.exports = assets;
+// npm packages
+var st = require('st')
 
-var path = require('path');
-var fs = require('fs');
+var mount = st(process.cwd());
 
-function assets(req, res) {
-  fs.readFile(req.url.substr(1), function (err, data) {
-    if (err) {
-      return res.error(404);
-    }
-
-    res.end(data);
-  })
+module.exports = function (req, res) {
+  if (!mount(req, res)) return res.error(404)
 };

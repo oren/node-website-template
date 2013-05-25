@@ -1,3 +1,9 @@
-<div class="contact" id="<%=id %>">
-  <a href="/contact/<%= id %>" rel=canonical><%= name %></a>
+<h4>displaying info from our database (json file):</h4>
+
+<div class="contact" id="<%=contacts[0].id %>">
+  <a href="/contact/<%= contacts[0].id %>" rel=canonical><%= contacts[0].name %></a>
+</div>
+
+<div class="contact" id="<%=contacts[1].id %>">
+  <a href="/contact/<%= contacts[1].id %>" rel=canonical><%= contacts[1].name %></a>
 </div>

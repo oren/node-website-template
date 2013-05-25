@@ -2,10 +2,10 @@
 
 process.title = 'node-website-template';
 
-//core modules
+// core modules
 var http = require('http');
 
-//non-core modules
+// npm packages
 var router = require('./router.js');
 var ErrorPage = require('error-page');
 var Templar = require('templar');
@@ -22,7 +22,6 @@ var server = http.createServer(function(req, res) {
     404: 'not found!'
   });
   res.template = Templar(req, res, templarOptions);
-
   router.match(req.url).fn(req, res);
 
 });

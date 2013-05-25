@@ -4,10 +4,11 @@
   "description": "site with no frameworks",
   "version": "0.0.0",
   "dependencies": {
-    "ejs": "~0.7.1",
-    "error-page": "~0.0.3",
-    "templar": "~0.0.6",
-    "routes": "~0.2.0"
+    "error-page": "0.0.6",
+    "routes": "~0.2.0",
+    "ejs": "~0.8.4",
+    "templar": "~0.2.1",
+    "st": "~0.1.3"
   },
   "devDependencies": {
     "tape": "~1.0.2"

@@ -11,9 +11,7 @@ function home (req, res) {
 
     data = Object.keys(data).map(function (id) {
       return data[id];
-    }).sort(function (a, b) {
-      return a.date > b.date ? -1 : 1;
-    })
+    });
 
     res.template('home.ejs', { title: 'Node.js Website Template', contacts: data });
   });
