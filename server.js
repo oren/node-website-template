@@ -9,9 +9,9 @@ var http = require('http');
 var router = require('routes')();
 var ErrorPage = require('error-page');
 var Templar = require('templar');
-var ejs = require('ejs');
 
-var config = { port: 3000, engine: ejs, templates: './templates' };
+var environment = process.env.NODE_ENV || 'development';
+var config = require('./config/' + environment + '.js');
 var templarOptions = { engine: config.engine, folder: config.templates };
 Templar.loadFolder(config.templates);
 
@@ -29,8 +29,8 @@ http.createServer(function(req, res) {
   res.template = Templar(req, res, templarOptions);
   router.match(req.url).fn(req, res);
 
-}).listen(process.env.PORT || config.port, function() {
-  console.log('Server Listening on Port ' + config.port + '. development environment');
+}).listen(config.port, function() {
+  console.log('Server Listening on Port ' + config.port + '. ' + environment + ' environment');
 });
 
 
