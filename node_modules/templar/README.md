@@ -33,6 +33,7 @@ http.createServer(function (req, res) {
 
 * `engine`: The engine to use.  EJS and Jade both work.
 * `folder`: The folder where template files are found.
+* `cache`: Boolean. Set to `false` to suppress 304 responses.
 
 ## Partials
 

@@ -4,9 +4,11 @@ var tap = require('tap')
 , ejs = require('ejs')
 , request = require('request')
 , PORT = process.env.PORT || 1337
+, stamp = 'pid' + process.pid
+, tplOpts = { engine: ejs, folder: __dirname, stamp: stamp }
 
 , server = http.createServer(function (req, res) {
-  res.template = Templar(req, res, { engine: ejs, folder: __dirname })
+  res.template = Templar(req, res, tplOpts)
 
   // pluck the if-none-match off the headers, since
   // we'll be changing that one up.
@@ -20,6 +22,9 @@ var tap = require('tap')
   console.error('SERVER', req.url)
 
   switch (req.url) {
+    case '/stamp':
+      return res.template('stamp.ejs')
+
     case '/foo':
       return res.template('foo.ejs', { headers: h })
 
@@ -159,6 +164,21 @@ tap.test('testing partials', function (t) {
                 + '\n'
                 + '</body></html>\n')
 
+    t.end()
+  })
+})
+
+tap.test('stamp', function (t) {
+  req('/stamp', function (er, res, body) {
+    if (er) throw er
+    t.equal(res.statusCode, 200)
+    t.ok(res.headers.etag, 'has etag')
+    t.equal(res.headers['content-type'], 'text/html')
+    t.ok(res.headers.date)
+    t.equal(res.headers.connection, 'keep-alive')
+    t.equal(res.headers['transfer-encoding'], 'chunked')
+    t.equal(res.headers['x-templar-stamp'], stamp)
+    t.equal(body, 'stamp = ' + stamp + '\n')
     t.end()
   })
 })
