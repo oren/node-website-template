@@ -2,7 +2,7 @@
 var http = require('http');
 
 //non-core modules
-// var ErrorPage = require('error-page');
+var ErrorPage = require('error-page');
 var Templar = require('templar');
 var ejs = require('ejs');
 
@@ -19,10 +19,10 @@ router.addRoute('/', require('./routes/home.js'))
 
 // request goes here
 http.createServer(function(req, res) {
-  console.log('url', req.url);
-  console.log('match', router.match(req.url));
 
-  // res.error = ErrorPage(req, res, {});
+  res.error = ErrorPage(req, res, {
+    404: 'not found!'
+  });
   res.template = Templar(req, res, templarOptions);
   router.match(req.url).fn(req, res);
 

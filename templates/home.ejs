@@ -1,82 +1,49 @@
-<!doctype html><html>
-<head><title><%= title %></title>
+<!doctype html>
+<html>
+<head>  
+  <title><%= title %></title>
+</head>
 
-<h1>Node.js website template</h1>
+<body>
+  <h1>Node.js website template</h1>
 
-<h3>Design Philosophy:</h3>
+  <h3>Design Philosophy:</h3>
 
-(inspired by <a href="https://github.com/isaacs/npm-www">isaacs</a>)
+  <p>(inspired by <a href="https://github.com/isaacs/npm-www">isaacs</a>)</p>
 
-<ul>
-  <li>
-    <p>No frameworks</p>
+  <ul>
+    <li>
+      <p>No frameworks</p>
+      <p>Everything is done using small, simple, standalone modules that work with vanilla Node.js http servers. Also no test frameworks or control flow library.</p>
+    </li>
+    <li>
+      <p>Unceremonious MVC</p>
+      <p>No big MVC class heirarchy.  Just have the route handler get some data, then hand it off to a template.  Simpler is better.</p>
+    </li>
+    <li>
+      <p>Ridiculous speed</p>
+      <p>This site should be surprisingly fast.  Towards that end, things are cached and served from memory whenever possible, and ETagged for browser-cacheablility.</p>
+    </li>
+    <li>
+      <p>Small Modules</p>
+      <p>No single JavaScript file should be more than about 200 lines.  If it is, then that's a sign that it should be split up.</p> </li>
+    <li>
+      <p>DRY Dependencies</p>
+      <p>If multiple different routes all have to keep doing the same thing, then they should either be the same route, or the repeated bits belong in a dependency.</p> </li>
+    <li>
+      <p>No lib folder</p>
+      <p>If you would put it in <code>lib/</code>, then it belongs in a separate module.</p>
+    </li>
+  </ul>
 
-    <p>Everything is done using small, simple, standalone modules that work
-    with vanilla Node.js http servers.</p>
-  </li>
+  <h4>displaying info from our database (json file):</h4>
 
-  <li>
-    <p>No lib folder</p>
-
-    <p>If you would put it in <code>lib/</code>, then it belongs in a separate module.</p>
-  </li>
-
-  <li>
-    <p>JavaScript, EJS, and Stylus</p>
-
-    <p>We are using JavaScript because that is the language Node.js runs.</p>
-
-    <p>We are using EJS for templating, because that is the template
-    language that is closest to HTML.</p>
-
-    <p>We are using Stylus for styling, because CSS is intolerable, and
-    stylus is a reasonable superset that adds useful features in a way
-    that makes it very clear what the resulting CSS will be.</p>
-  </li>
-
-  <li>
-    <p>Ridiculous speed</p>
-
-    <p>This site should be surprisingly fast.  Towards that end, things are
-    cached and served from memory whenever possible, and ETagged for
-    browser-cacheablility.</p>
-  </li>
-
-  <li>
-    <p>Unceremonious MVC</p>
-
-    <p>No big MVC class heirarchy.  Just have the route handler get some
-    data, then hand it off to a template.  Simpler is better.</p>
-  </li>
-
-  <li>
-    <p>Small Modules</p>
-
-    <p>No single JavaScript file should be more than about 200 lines.  If
-    it is, then that's a sign that it should be split up.</p>
-  </li>
-
-  <li>
-    <p>DRY Dependencies</p>
-
-    <p>If multiple different routes all have to keep doing the same thing,
-    then they should either be the same route, or the repeated bits
-    belong in a dependency.</p>
-  </li>
-</ul>
-
-
-<h3>Contributions welcome!</h3>
-
-<h4>list of contacts from our database(json file):</h4>
-
-<ul>
-  <% contacts.forEach(function (contact) {
-    %>
-    <li><%- include('contact-partial.ejs', contact) %></li>
-    <%
-  }) %>
-</ul>
-
-
-
+  <ul>
+    <% contacts.forEach(function (contact) {
+      %>
+      <li><%- include('contact-partial.ejs', contact) %></li>
+      <%
+    }) %>
+  </ul>
+</body>
+</html>

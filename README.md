@@ -46,6 +46,7 @@ There are two drawback for using expresss. The first is connect/middleware - eve
         
 ## Run
 
+    npm install
     node server.js
     http://localhost:3000
 
@@ -57,6 +58,4 @@ or
 
     node test/home.js      # run a single test
 
-## Contributing
-
-Contributions welcome!  
+#### Contributions welcome!  

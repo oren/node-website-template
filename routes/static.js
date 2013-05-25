@@ -8,8 +8,7 @@ function assets(req, res) {
 
   fs.readFile(file, function (err, data) {
     if (err) {
-      res.statusCode = 404;
-      return res.end();
+      return res.error(404);
     }
 
     res.end(data);
