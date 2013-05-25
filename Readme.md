@@ -62,7 +62,8 @@ or
 
 * Node Style Guide - http://nodeguide.com/style.html
 * `'use strict';` at the top of every js file
-
+* The server should be able to run as a command line app. server = require('./server.js')
+* Single entry point for dependencies (easy to mock when testing)
 
 ### Status Codes
 
