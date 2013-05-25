@@ -52,6 +52,10 @@ There are two drawback for using expresss. The first is connect/middleware - eve
     test/             
       home.js              # unit tests with tape
 
+    bin/
+      deploy               # deploy script
+      restart              # post-deploy script
+
 ## Modules being used
 
         routes - routing
