@@ -1,5 +1,7 @@
 # Website template in Node.js
 
+[Github Repo](https://github.com/oren/node-website-template)
+
 ![puzzle](http://i.imgur.com/8orBBZu.png)
 
 ## Index
@@ -114,6 +116,7 @@ I use [deploy](https://github.com/visionmedia/deploy), a 400 lines bash script w
 200 - ok  
 201 - created  
 202 - accepted  
+304 - not modified
 400 - bad request  
 401 - unauthorized  
 404 - not found  
