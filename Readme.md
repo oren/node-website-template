@@ -1,4 +1,14 @@
-Website template in Node.js
+# Website template in Node.js
+
+## Index
+
+* [Design Philosophy](#design-philosophy)
+* [Why can't you use express?](#why-can't-you-use-express?)
+* [Folders sturcture](#folders-structure)
+* [Modules being used](#modules-being-used)
+* [Run](#run)
+* [Test](#test)
+* [Misc](#misc)
 
 ## Design Philosophy:
 
@@ -11,13 +21,13 @@ Website template in Node.js
 * **DRY Dependencies** - If multiple different routes all have to keep doing the same thing, then they should either be the same route, or the repeated bits belong in a dependency.
 * **No lib folder** - If you would put it in `lib/`, then it belongs in a separate module.
 
-## But can't we use express?
+## Why can't you use express?
 
 express is a great framework but you usually need is to route urls to functions and if you are building a website and not just an API you can simply add a templating engine. Everything you need can be done by adding a simple node module that can easily be replaced or removed if needed.
 
 There are two drawback for using expresss. The first is connect/middleware - every middleware you add is being added to each request to your server even if not all the requests needs it. The second drawback is it doesn't play nice with stream - one of the core aspects of Node.  
 
-## Folders Structure
+## Folders structure
 
     server.js             # the starting point of our server
 
@@ -52,11 +62,15 @@ There are two drawback for using expresss. The first is connect/middleware - eve
 
 ## Test
 
+I use [tape](https://github.com/substack/tape), substack's minimalist test library. Server and client side code. 
+
     npm test               # use tape binary to run all tests
 
 or
 
     node test/home.js      # run a single test
+
+## Misc
 
 ### Code Guidelines
 
@@ -76,4 +90,4 @@ or
 405 - method not allowed  
 500 - server error  
 
-#### Contributions welcome!  
+#### Contributions welcome!
