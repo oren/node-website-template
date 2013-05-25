@@ -29,6 +29,7 @@ var server = http.createServer(function(req, res) {
     404: 'not found!'
   });
   res.template = Templar(req, res, templarOptions);
+
   router.match(req.url).fn(req, res);
 
 });
@@ -36,12 +37,12 @@ var server = http.createServer(function(req, res) {
 // if this file is run directly - node server.js
 if (module === require.main) {
   server.listen(config.port, function() {
-    console.log('Server Listening on Port ' + config.port + '. ' + environment + ' environment');
+    console.log('Server Listening - http://localhost:' + config.port + '. ' + environment + ' environment');
   });
 } else {
   module.exports.start = function(cb) {
     server.listen(config.port, function() {
-      console.log('Server Listening on Port ' + config.port + '. ' + environment + ' environment');
+      console.log('Server Listening - http://localhost:' + config.port + '. ' + environment + ' environment');
       cb(null);
     });
   }
