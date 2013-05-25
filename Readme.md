@@ -89,11 +89,11 @@ http://localhost:3000
 
 I use [tape](https://github.com/substack/tape), substack's minimalist test library. Server and client side code.  I wrote about it [here](https://github.com/oren/oren.github.com/blob/master/posts/tape/tape.md) if you havn't heard about it.
 
-    npm test               # use tape binary to run all tests
+    npm test                      # use tape binary to run all tests
 
 or
 
-    node test/home.js      # run a single test
+    node test/server/home.js      # run a single test
 
 ## Deploy
 

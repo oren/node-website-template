@@ -10,6 +10,9 @@
     "templar": "~0.2.1",
     "st": "~0.1.3"
   },
+  "scripts": {
+    "test": "node_modules/tape/bin/tape test/client/*.js test/server/*.js"
+  },
   "devDependencies": {
     "tape": "~1.0.2"
   },
