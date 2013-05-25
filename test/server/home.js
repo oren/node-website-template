@@ -2,7 +2,7 @@
 
 var test = require('tape');
 var http = require('http');
-var server = require('../server.js');
+var server = require('../../server.js');
 
 test('/health returns 200', function (t) {
   t.plan(1);
