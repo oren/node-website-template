@@ -26,8 +26,7 @@
 
 ## Why can't you use express?
 
-express is a great framework but all you usually need is to route urls to functions and if you are building a website and not just an API you can simply add a templating engine. There is probably a module for what you need. The only challenge is to find it and I hope that this codebase would help a little bit.
-
+express is a great framework but all you usually need is to route urls to functions and if you are building a website and not just an API you can simply add a templating engine. There is probably a module for what you need. The only challenge is to find it and I hope that this codebase would help a little bit.  
 There are two drawback for using expresss. The first is connect/middleware - every middleware you add is being added to each request to your server even if not all the requests needs it. The second drawback is it doesn't play nice with stream - one of the core aspects of Node.  
 
 ## Folders structure
@@ -74,9 +73,11 @@ deploy.conf            # deployment config file
         
 ## Run
 
-    npm install
-    node server.js
-    http://localhost:3000
+```
+npm install
+node server.js
+```
+http://localhost:3000
 
 ## Test
 
