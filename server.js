@@ -22,7 +22,9 @@ router.addRoute('/', require('./routes/home.js'))
 
 // request goes here
 var server = http.createServer(function(req, res) {
-
+  
+  console.log(req.url);
+ 
   res.error = ErrorPage(req, res, {
     404: 'not found!'
   });
