@@ -1,7 +1,5 @@
 # Website template in Node.js
 
-[Github Repo](https://github.com/oren/node-website-template)
-
 ![puzzle](http://i.imgur.com/8orBBZu.png)
 
 ## Index
@@ -73,12 +71,14 @@ deploy.conf            # deployment config file
 * [st](https://github.com/isaacs/st) - serving static files
 * [error-page](https://github.com/isaacs/error-page) - send error pages
 * [browserify](https://github.com/substack/node-browserify) - to use a node-style require() to organize your browser code
+* [Grunt](http://gruntjs.com/) - watch and compile browserify and stylus
 * [tape](https://github.com/substack/tape) - browser and server unit tests
         
 ## Run
 
 ```
 sudo npm install browserify -g
+sudo npm install grunt-cli -g
 npm install
 browserify public/js/app.js > public/js/app.min.js
 node server.js
