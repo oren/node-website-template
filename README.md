@@ -64,7 +64,7 @@ or
 * `'use strict';` at the top of every js file
 
 
-### status codes
+### Status Codes
 
 200 - ok  
 201 - created  
