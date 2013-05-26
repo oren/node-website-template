@@ -41,7 +41,7 @@ server.js              # the starting point of our server
 router.js              # map urls to functions
 
 routes/                # each request will ended up in one of those
-  home.js              # request for '/'
+  index.js              # request for '/'
   static.js            # request for static files
 
 models/                # getting and saving stuff in our DB 
@@ -49,7 +49,7 @@ models/                # getting and saving stuff in our DB
   contacts.json        #  our DB - a few contacts
 
 templates/             # UI stuff
-  home.ejs             # homepage - showing list of users
+  index.ejs             # homepage - showing list of users
   contact-partial.ejs  # each contact
 
 config/                # single entry point for dependencies:
@@ -58,7 +58,7 @@ config/                # single entry point for dependencies:
   test.js
 
 test/             
-  home.js              # unit tests with tape
+  index.js              # unit tests with tape
 
 bin/
   deploy               # deploy script
@@ -104,7 +104,7 @@ I use [tape](https://github.com/substack/tape), substack's minimalist test libra
 
 or
 
-    node test/server/home.js      # run a single test
+    node test/server/index.js      # run a single test
 
 ## Deploy
 

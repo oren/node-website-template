@@ -13,6 +13,6 @@ function home (req, res) {
       return data[id];
     });
 
-    res.template('home.ejs', { title: 'Node.js Website Template', contacts: data });
+    res.template('index.ejs', { title: 'Node.js Website Template', contacts: data });
   });
 };
