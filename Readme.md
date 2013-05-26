@@ -49,7 +49,7 @@ db/                     # db related stuff
   mock-db.js            # access to mocked db. used for unit tests
   contacts.json         # our DB
 
-templates/              # UI stuff
+templates/              # server-side templates
   index.ejs             # homepage - showing list of users
   contact-partial.ejs   # each contact
 
