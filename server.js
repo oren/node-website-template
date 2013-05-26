@@ -24,7 +24,7 @@ var server = http.createServer(function(req, res) {
     404: 'not found!'
   });
   res.template = Templar(req, res, templarOptions);
-  router.match(req.url).fn(req, res);
+  router.match(req.url).fn(req, res, config);
 
 });
 

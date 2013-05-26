@@ -5,7 +5,7 @@ var fs = require("fs")
 
 var contacts_file = path.resolve(__dirname, "contacts.json")
 
-module.exports = function allContacts (cb) {
+module.exports.allContacts = function (cb) {
   fs.readFile(contacts_file, "utf8", function (er, data) {
     if (er) return cb(er)
     try {

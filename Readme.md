@@ -36,24 +36,25 @@ Also, writing a middleware means you create a module that doesn't work with the 
 ## Folders structure
 
 ```
-server.js              # the starting point of our server
+server.js               # the starting point of our server
 
-router.js              # map urls to functions
+router.js               # map urls to functions
 
-routes/                # each request will ended up in one of those
+routes/                 # each request will ended up in one of those
   index.js              # request for '/'
-  static.js            # request for static files
+  static.js             # request for static files
 
-models/                # getting and saving stuff in our DB 
-  all-contacts.js      # getting all contacts
-  contacts.json        #  our DB - a few contacts
+db/                     # db related stuff 
+  db.js                 # access to a real db (just a json file for this example)
+  mock-db.js            # access to mocked db. used for unit tests
+  contacts.json         # our DB
 
-templates/             # UI stuff
+templates/              # UI stuff
   index.ejs             # homepage - showing list of users
-  contact-partial.ejs  # each contact
+  contact-partial.ejs   # each contact
 
-config/                # single entry point for dependencies:
-  development.js       # hostnames, dbs, external api etc
+config/                 # single entry point for dependencies:
+  development.js        # hostnames, dbs, external api etc
   prod.js               
   test.js
 
