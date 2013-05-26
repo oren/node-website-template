@@ -2,7 +2,7 @@
 
 ![puzzle](http://i.imgur.com/8orBBZu.png)
 
-I wrote this template to help me create websites and Web Services with Node. It uses vanilla http server with a few small packages that most website need. Stuff like templates, router and serving static files. I borrowed a lot from the [npm website](https://github.com/isaacs/npm-www) that is written by isaacs.
+I wrote this template to help me create websites and Web Services with Node. It uses vanilla http server with a few small packages that most websites need. Stuff like templates, router and serving static files. I borrowed a lot from the [npm website](https://github.com/isaacs/npm-www) that isaacs wrote.
 
 ### What's wrong with frameworks like express?
 
@@ -81,7 +81,7 @@ deploy.conf            # deployment config file
         
 ### Alternative Modules
 
-(Please add any helpful modules that works with vanilla http server)
+(Please let me know of any helpful modules that works with vanilla http server)
 
 * [jade](https://github.com/visionmedia/jade) instead of ejs
 * [ecstatic](https://github.com/jesusabdullah/node-ecstatic) instead of st
