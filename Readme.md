@@ -80,6 +80,7 @@ deploy.conf            # deployment config file
 sudo npm install browserify -g
 sudo npm install grunt-cli -g
 npm install
+grunt watch                        # compile styl into css and browserify js files
 browserify public/js/app.js > public/js/app.min.js
 node server.js
 ```
