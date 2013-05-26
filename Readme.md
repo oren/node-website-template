@@ -7,7 +7,9 @@ I wrote this template to help me create websites and Web Services with Node. It 
 ### What's wrong with frameworks like express?
 
 When newcomers ask about writing a website or a Web Service they are usualy being told to use express. The problem with express is it uses  middleware/Connect. middleware was a hack invented while solving a problem Node doesn't have. The problem that WSGI solves, which is creating a common interface for writing websites or frameworks that are used by web servers (such as Gunicorn in python or Thin in Ruby). Node doesn't even have those web servers since it comes with a built-in http library.  
+
 middleware forces a pre-declared stack of (req,res,next) functions on top of your routes. It's mostly just not a very useful approach for handling the kinds of things you need a webserver to do - serving static files, parsing POST data, parsing cookies, routing, auth. All can be handled quite nicely just by explicitly passing req and res around as necessary or by returning a stream and piping that to res as the case may warrant.  
+
 Also, writing a middleware means you create a module that doesn't work with the Node eco-system. It only works with express/Connect.
 
 ## Index
@@ -76,10 +78,12 @@ deploy.conf            # deployment config file
 * [Grunt](http://gruntjs.com/) - watch and compile browserify and stylus
 * [tape](https://github.com/substack/tape) - browser and server unit tests
         
-### Alternative Modules / other stuff that might be needed by Website/API
+### Alternative Modules
 
-* Jade instead of ejs
-* ecstatic instead of st
+(Please add any helpful modules that works with vanilla http server)
+
+* [jade](https://github.com/visionmedia/jade) instead of ejs
+* [ecstatic](https://github.com/jesusabdullah/node-ecstatic) instead of st
 
 ## Run
 
@@ -131,3 +135,4 @@ I use [deploy](https://github.com/visionmedia/deploy), a 400 lines bash script w
 500 - server error  
 
 #### Contributions welcome!
+
