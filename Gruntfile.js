@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     stylus: {
       compile: {
         files: {
-          'main.css': ['main.styl'] // compile and concat into single file
+          'public/css/app.css': 'public/css/*.styl' // compile and concat into single file
         }
       }
     }
@@ -13,4 +13,5 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-stylus');
 
+  grunt.registerTask('default', 'stylus');
 };
