@@ -58,8 +58,11 @@ config/                 # single entry point for dependencies:
   prod.js               
   test.js
 
-test/             
-  index.js              # unit tests with tape
+test                    # unit tests with tape
+  client                # client-side tests with the help of browserify 
+    saveUser.js
+  server                 
+    index.js
 
 bin/
   deploy               # deploy script
