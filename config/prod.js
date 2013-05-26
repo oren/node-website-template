@@ -7,5 +7,5 @@ module.exports = {
   port: 3000, 
   engine: ejs, 
   templates: __dirname + '/../templates',
-  db: require('../db/mock-db.js')
+  db: require('../db/db.js')
 };
