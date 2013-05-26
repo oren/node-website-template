@@ -1,11 +1,20 @@
-# Website template in Node.js
+# Website/Web Service template in Node.js
 
 ![puzzle](http://i.imgur.com/8orBBZu.png)
+
+I wrote this template to help me create websites and Web Services with Node. It uses vanilla http server with a few small packages that most website need. Stuff like templates, router and serving static files. I borrowed a lot from the [npm website](https://github.com/isaacs/npm-www) that is written by isaacs.
+
+### What's wrong with frameworks like express?
+
+When newcomers ask about writing a website or a Web Service they are usualy being told to use express. The problem with express is it uses  middleware/Connect. middleware was a hack invented while solving a problem Node doesn't have. The problem that WSGI solves, which is creating a common interface for writing websites or frameworks that are used by web servers (such as Gunicorn in python or Thin in Ruby). Node doesn't even have those web servers since it comes with a built-in http library.  
+
+middleware forces a pre-declared stack of (req,res,next) functions on top of your routes. It's mostly just not a very useful approach for handling the kinds of things you need a webserver to do - serving static files, parsing POST data, parsing cookies, routing, auth. All can be handled quite nicely just by explicitly passing req and res around as necessary or by returning a stream and piping that to res as the case may warrant.  
+
+Also, writing a middleware means you create a module that doesn't work with the Node eco-system. It only works with express/Connect.
 
 ## Index
 
 * [Design Philosophy](#design-philosophy)
-* [Why can't you use express?](#why-can't-you-use-express?)
 * [Folders sturcture](#folders-structure)
 * [Modules being used](#modules-being-used)
 * [Run](#run)
@@ -23,11 +32,6 @@
 * **Small Modules** - No single JavaScript file should be more than about 200 lines.  If it is, then that's a sign that it should be split up.  
 * **DRY Dependencies** - If multiple different routes all have to keep doing the same thing, then they should either be the same route, or the repeated bits belong in a dependency.
 * **No lib folder** - If you would put it in `lib/`, then it belongs in a separate module.
-
-## Why can't you use express?
-
-express is a great framework but all you usually need is to route urls to functions and if you are building a website and not just an API you can simply add a templating engine. There is probably a module for what you need. The only challenge is to find it and I hope that this codebase would help a little bit.  
-There are two drawback for using expresss. The first is connect/middleware - every middleware you add is being added to each request to your server even if not all the requests needs it. The second drawback is it doesn't play nice with stream - one of the core aspects of Node.  
 
 ## Folders structure
 
@@ -74,13 +78,18 @@ deploy.conf            # deployment config file
 * [Grunt](http://gruntjs.com/) - watch and compile browserify and stylus
 * [tape](https://github.com/substack/tape) - browser and server unit tests
         
+### Alternative Modules / other stuff that might be needed by Website/API
+
+* Jade instead of ejs
+* ecstatic instead of st
+
 ## Run
 
 ```
 sudo npm install browserify -g
 sudo npm install grunt-cli -g
 npm install
-grunt watch                        # compile styl files with stylus and js files with browserify 
+grunt watch                        # compile .styl files with stylus and .js files with browserify 
 node server.js
 ```
 http://localhost:3000
