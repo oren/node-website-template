@@ -2,13 +2,15 @@
 
 process.title = 'node-website-template';
 
-// core modules
+// core module
 var http = require('http');
 
 // npm packages
-var router = require('./router.js');
 var ErrorPage = require('error-page');
 var Templar = require('templar');
+
+// my module
+var router = require('./router.js');
 
 var environment = process.env.NODE_ENV || 'development';
 var config = require('./config/' + environment + '.js');
@@ -26,12 +28,12 @@ var server = http.createServer(function(req, res) {
 
 });
 
-// if this file is run directly - node server.js
+// if this file is run directly (node server.js) 
 if (module === require.main) {
   server.listen(config.port, function() {
     console.log('Server Listening - http://localhost:' + config.port + '. ' + environment + ' environment');
   });
-} else {
+} else { // if it was required
   module.exports.start = function(cb) {
     server.listen(config.port, function() {
       console.log('Server Listening - http://localhost:' + config.port + '. ' + environment + ' environment');
