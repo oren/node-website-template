@@ -1,10 +1,9 @@
 'use strict';
 
 // There are 2 ways to start the server:
-// by running it directly with the node executable 
-// or by require('./server.js'). 
-// and calling start() on the returned object.
-// this is mainly to be able to call it from a test file.
+// 1. running it directly with the node executable - node server.js
+// 2. server = require('./server.js'); server.start();
+// option 2 is mainly to be able to call it from a test file.
 //
 // if this file is run directly
 // create the server and listen immediately
