@@ -1,5 +1,3 @@
-body,html{height:100%;margin:0;padding:0;line-height:1.9em}
-
 html,button,input,select,textarea{color:#222}
 body{font-size:1em;line-height:1.4}
 ::-moz-selection{background:#b3d4fc;text-shadow:none}
@@ -30,8 +28,7 @@ img{max-width:100% !important}
 @page{margin:.5cm}
 p,h2,h3{orphans:3;widows:3}
 h2,h3{page-break-after:avoid}
-}
-/* normalize.css v1.1.2 | MIT License | git.io/normalize */
+}/* normalize.css v1.1.2 | MIT License | git.io/normalize */
 article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}
 audio,canvas,video{display:inline-block;*display:inline;*zoom:1}
 audio:not([controls]){display:none;height:0}
@@ -83,3 +80,4 @@ input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit
 button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
 textarea{overflow:auto;vertical-align:top;}
 table{border-collapse:collapse;border-spacing:0}
+body{font:12px Helvetica,Arial,sans-serif}
