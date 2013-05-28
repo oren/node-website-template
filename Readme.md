@@ -67,7 +67,9 @@ test                    # unit tests with tape
 bin/
   deploy               # deploy script
   restart              # post-deploy script
+  restart-dev          # stylus and browserify and restart server on file change
 
+.nodemonignore         # tell nodemon what files to ignore
 deploy.conf            # deployment config file
 ```
 
@@ -79,7 +81,7 @@ deploy.conf            # deployment config file
 * [st](https://github.com/isaacs/st) - serving static files
 * [error-page](https://github.com/isaacs/error-page) - send error pages
 * [browserify](https://github.com/substack/node-browserify) - to use a node-style require() to organize your browser code
-* [Grunt](http://gruntjs.com/) - watch and compile browserify and stylus
+* [nodemon](https://github.com/remy/nodemon) - watch and compile browserify and stylus and restart the server on file change
 * [tape](https://github.com/substack/tape) - browser and server unit tests
         
 ### Alternative Modules
@@ -92,11 +94,9 @@ deploy.conf            # deployment config file
 ## Run
 
 ```
-sudo npm install browserify -g
-sudo npm install grunt-cli -g
+sudo npm install nodemon -g
 npm install
-grunt watch                        # compile .styl files with stylus and .js files with browserify 
-node server.js
+npm start                        # compile .styl files with stylus and .js files with browserify and start the server
 ```
 http://localhost:3000
 

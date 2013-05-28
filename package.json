@@ -1,8 +1,23 @@
 {
-  "author": "",
-  "name": "website",
-  "description": "site with no frameworks",
+  "name": "node-website-template",
   "version": "0.0.0",
+  "description": "Website/Web Service template in Node.js",
+  "main": "router.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node_modules/tape/bin/tape test/client/*.js test/server/*.js",
+    "start": "nodemon -e js,styl,html,ejs --exec bin/restart-dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oren/node-website-template.git"
+  },
+  "author": "",
+  "license": "BSD",
+  "readmeFilename": "Readme.md",
+  "gitHead": "4da102a011e51e3415a65db118b52587c3415d1d",
   "dependencies": {
     "error-page": "0.0.6",
     "routes": "~0.2.0",
@@ -10,17 +25,9 @@
     "templar": "~0.2.1",
     "st": "~0.1.3"
   },
-  "scripts": {
-    "test": "node_modules/tape/bin/tape test/client/*.js test/server/*.js",
-    "start": "nodemon -e js,styl,html,ejs --exec bin/restart-dev"
-  },
   "devDependencies": {
     "tape": "~1.0.2",
-    "stylus": "~0.32.1",
-    "browserify": "~2.14.2"
-  },
-  "optionalDependencies": {},
-  "engines": {
-    "node": "*"
+    "browserify": "~2.14.2",
+    "stylus": "~0.32.1"
   }
 }
