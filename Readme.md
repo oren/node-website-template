@@ -35,6 +35,9 @@ Also, writing a middleware means you create a module that doesn't work with the 
 
 ## Folders structure
 
+*note: 
+I created a simplified version of the server [here](https://github.com/oren/node-website-template/blob/master/simple-server.js) (less easy to test and routes in the same file as the server).*
+
 ```
 server.js               # the starting point of our server
 
