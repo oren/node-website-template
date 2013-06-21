@@ -4,3 +4,4 @@ node_modules/browserify/bin/cmd.js public/js/app.js > public/js/app.min.js
 node_modules/stylus/bin/stylus -c public/css/app.styl
 
 pgrep -f node-website | xargs kill
+node server.js
