@@ -73,6 +73,7 @@ bin/
   restart-dev          # stylus and browserify and restart server on file change
 
 .nodemonignore         # tell nodemon what files to ignore
+.jshintrc              # jshist options
 deploy.conf            # deployment config file
 ```
 
