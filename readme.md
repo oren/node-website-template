@@ -97,10 +97,9 @@ deploy.conf            # deployment config file
 ## Run
 
 ```
-sudo npm install node-dev -g
 npm install
-npm run watchify &               # build browserify on file change
-npm start
+npm run watchify &               # build browserify when a js client-side file changes
+npm start                        # run server.js with node-dev. it will restart the app when a server side file changes
 ```
 http://localhost:3000
 
