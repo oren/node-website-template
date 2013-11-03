@@ -40,9 +40,6 @@ Also, writing a middleware means you create a module that doesn't work with the 
 
 ## Folders structure
 
-*note: 
-I created a simplified version of the server [here](https://github.com/oren/node-website-template/blob/master/simple-server.js) (less easy to test and routes in the same file as the server).*
-
 ```
 server.js               # the starting point of our server
 
@@ -52,7 +49,7 @@ routes/                 # each request will ended up in one of those
   index.js              # request for '/'
   static.js             # request for static files
 
-db/                     # db related stuff 
+db/                     # db related stuff
   db.js                 # access to a real db (just a json file for this example)
   mock-db.js            # access to mocked db. used for unit tests
   contacts.json         # our DB
@@ -63,13 +60,13 @@ templates/              # server-side templates
 
 config/                 # single entry point for dependencies:
   development.js        # hostnames, dbs, external api etc
-  prod.js               
+  prod.js
   test.js
 
 test                    # unit tests with tape
-  client                # client-side tests with the help of browserify 
+  client                # client-side tests with the help of browserify
     saveUser.js
-  server                 
+  server
     index.js
 
 bin/
@@ -91,7 +88,7 @@ deploy.conf            # deployment config file
 * [browserify](https://github.com/substack/node-browserify) - to use a node-style require() to organize your browser code
 * [nodemon](https://github.com/remy/nodemon) - watch and compile browserify and stylus and restart the server on file change
 * [tape](https://github.com/substack/tape) - browser and server unit tests
-        
+
 ### Alternative Modules
 
 (Please let me know of any helpful modules that works with vanilla http server)
@@ -112,6 +109,7 @@ http://localhost:3000
 
 I use [tape](https://github.com/substack/tape), substack's minimalist test library. Server and client side code.  I wrote about it [here](https://github.com/oren/oren.github.com/blob/master/posts/tape/tape.md) if you havn't heard about it.
 
+    (if your tests are hitting the server you need to run it first)
     npm test                      # use tape binary to run all tests
 
 or
@@ -130,21 +128,8 @@ I use [deploy](https://github.com/visionmedia/deploy), a 400 lines bash script w
 ### Code Guidelines
 
 * Node Style Guide - http://nodeguide.com/style.html
-* `'use strict';` at the top of every js file
-* The server should be able to run as a command line app. server = require('./server.js')
+* Use Jshint
 * Single entry point for dependencies (easy to mock when testing)
-
-### Status Codes
-
-200 - ok  
-201 - created  
-202 - accepted  
-304 - not modified
-400 - bad request  
-401 - unauthorized  
-404 - not found  
-405 - method not allowed  
-500 - server error  
 
 #### Contributions welcome!
 
