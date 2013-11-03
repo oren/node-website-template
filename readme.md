@@ -72,7 +72,6 @@ bin/
   restart              # post-deploy script
   restart-dev          # stylus and browserify and restart server on file change
 
-.nodemonignore         # tell nodemon what files to ignore
 .jshintrc              # jshist options
 deploy.conf            # deployment config file
 ```
@@ -85,7 +84,7 @@ deploy.conf            # deployment config file
 * [st](https://github.com/isaacs/st) - serving static files
 * [error-page](https://github.com/isaacs/error-page) - send error pages
 * [browserify](https://github.com/substack/node-browserify) - to use a node-style require() to organize your browser code
-* [nodemon](https://github.com/remy/nodemon) - watch and compile browserify and stylus and restart the server on file change
+* [node-dev](https://github.com/fgnass/node-dev) - restart the server on server files change
 * [tape](https://github.com/substack/tape) - browser and server unit tests
 
 ### Alternative Modules
@@ -98,11 +97,16 @@ deploy.conf            # deployment config file
 ## Run
 
 ```
-sudo npm install nodemon -g
+sudo npm install node-dev -g
 npm install
-npm start                        # compile .styl files with stylus and .js files with browserify and start the server
+npm run watchify &               # build browserify on file change
+npm start
 ```
 http://localhost:3000
+
+## Compile stylus to css
+
+`npm run style`
 
 ## Test
 
