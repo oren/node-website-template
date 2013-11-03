@@ -21,17 +21,12 @@ router.addRoute('/*', require('./routes/static.js'));
 router.addRoute('/', require('./routes/home.js'));
 
 http.createServer(function (req, res) {
-  // res.statusCode = 401;
-  res.writeHead(401, {
-    'Content-Type': 'text/plain'
+  res.error = ErrorPage(req, res, {
+    404: 'not found!'
   });
-  res.end();
-  // res.error = ErrorPage(req, res, {
-  //   404: 'not found!'
-  // });
 
-  // res.template = Templar(req, res, templarOptions);
-  // router.match(req.url).fn(req, res, config);
+  res.template = Templar(req, res, templarOptions);
+  router.match(req.url).fn(req, res, config);
 }).listen(config.port);
 
 console.log('Server Listening - http://localhost:' + config.port + '. ' + environment + ' environment');
