@@ -2,23 +2,9 @@
 
 ![puzzle](http://i.imgur.com/8orBBZu.png)
 
-I wrote this template to help me create websites and Web Services with Node. It uses vanilla http server with a few small packages that most websites need. Stuff like templates, router and serving static files. I borrowed a lot from isaacs' [npm website](https://github.com/isaacs/npm-www).
+**Table of Contents**
 
-Sites that follow this approach: (pull requests for more examples are welcome)
-
-* https://github.com/isaacs/npm-www
-* https://github.com/Raynos/process-dashboard
-
-### What's wrong with frameworks like express?
-
-When newcomers ask about writing a website or a Web Service they are usualy being told to use express. The problem with express is it uses  middleware/Connect. middleware was a hack invented while solving a problem Node doesn't have. The problem that WSGI solves, which is creating a common interface for writing websites or frameworks that are used by web servers (such as Gunicorn in python or Thin in Ruby). Node doesn't even have those web servers since it comes with a built-in server as part of it's http library.  
-
-middleware forces a pre-declared stack of (req,res,next) functions on top of your routes. It's mostly just not a very useful approach for handling the kinds of things you need a webserver to do - serving static files, parsing POST data, parsing cookies, routing, auth. All can be handled quite nicely just by explicitly passing req and res around as necessary or by returning a stream and piping that to res as the case may warrant.  
-
-Also, writing a middleware means you create a module that doesn't work with the Node eco-system. It only works with express/Connect.
-
-## Index
-
+* [Why not express?](#why-not-express)
 * [Design Philosophy](#design-philosophy)
 * [Folders sturcture](#folders-structure)
 * [Modules being used](#modules-being-used)
@@ -26,6 +12,22 @@ Also, writing a middleware means you create a module that doesn't work with the 
 * [Test](#test)
 * [Deploy](#deploy)
 * [Misc](#misc)
+
+I wrote this template to help me create websites and Web Services with Node. It uses vanilla http server with a few small packages that most websites need. Stuff like templates, router and serving static files. I borrowed a lot from isaacs' [npm website](https://github.com/isaacs/npm-www).
+
+Sites that follow this approach: (pull requests for more examples are welcome)
+
+* https://github.com/isaacs/npm-www
+* https://github.com/Raynos/process-dashboard
+* https://github.com/substack/substack.net
+
+## Why not express
+
+When newcomers ask about writing a website or a Web Service they are usualy being told to use express. The problem with express is it uses  middleware/Connect. middleware was a hack invented while solving a problem Node doesn't have. The problem that WSGI solves, which is creating a common interface for writing websites or frameworks that are used by web servers (such as Gunicorn in python or Thin in Ruby). Node doesn't even have those web servers since it comes with a built-in server as part of it's http library.  
+
+middleware forces a pre-declared stack of (req,res,next) functions on top of your routes. It's mostly just not a very useful approach for handling the kinds of things you need a webserver to do - serving static files, parsing POST data, parsing cookies, routing, auth. All can be handled quite nicely just by explicitly passing req and res around as necessary or by returning a stream and piping that to res as the case may warrant.  
+
+Also, writing a middleware means you create a module that doesn't work with the Node eco-system. It only works with express/Connect.
 
 ## Design Philosophy
 
@@ -133,5 +135,5 @@ I use [deploy](https://github.com/visionmedia/deploy), a 400 lines bash script w
 * Use Jshint
 * Single entry point for dependencies (easy to mock when testing)
 
-#### Contributions welcome!
+Contributions welcome!
 
