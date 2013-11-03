@@ -43,16 +43,9 @@ Also, writing a middleware means you create a module that doesn't work with the 
 ```
 server.js               # the starting point of our server
 
-router.js               # map urls to functions
-
 routes/                 # each request will ended up in one of those
   index.js              # request for '/'
   static.js             # request for static files
-
-db/                     # db related stuff
-  db.js                 # access to a real db (just a json file for this example)
-  mock-db.js            # access to mocked db. used for unit tests
-  contacts.json         # our DB
 
 templates/              # server-side templates
   index.ejs             # homepage - showing list of users
@@ -62,6 +55,11 @@ config/                 # single entry point for dependencies:
   development.js        # hostnames, dbs, external api etc
   prod.js
   test.js
+
+db/                     # db related stuff
+  db.js                 # access to a real db (just a json file for this example)
+  mock-db.js            # access to mocked db. used for unit tests
+  contacts.json         # our DB
 
 test                    # unit tests with tape
   client                # client-side tests with the help of browserify
