@@ -11,7 +11,7 @@
     "start": "npm run build && ./node_modules/node-dev/bin/node-dev server.js",
     "watchify": "./node_modules/watchify/bin/cmd.js --debug public/js/app.js -o public/js/bundle.js",
     "style": "./node_modules/stylus/bin/stylus -c public/css/app.styl",
-    "test": "node_modules/tape/bin/tape test/client/*.js test/server/*.js"
+    "test": "node_modules/tape/bin/tape test/client/*.js"
   },
   "repository": {
     "type": "git",
