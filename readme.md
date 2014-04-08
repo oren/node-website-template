@@ -2,7 +2,7 @@
 
 ![puzzle](http://i.imgur.com/8orBBZu.png)
 
-https://www.codeship.io/projects/87c9c610-a174-0131-48e7-2eb91d28af94/status
+![codeship](https://www.codeship.io/projects/87c9c610-a174-0131-48e7-2eb91d28af94/status)
 
 **Table of Contents**
 
