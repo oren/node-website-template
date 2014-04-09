@@ -1,6 +1,5 @@
 # Website/Web Service template in Node.js
 
-
 ![puzzle](http://i.imgur.com/8orBBZu.png)
 
 ![codeship](https://www.codeship.io/projects/87c9c610-a174-0131-48e7-2eb91d28af94/status)
