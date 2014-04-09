@@ -12,5 +12,5 @@ forever stop server.js
 rm -r $shared/forever.log || true
 
 cd $app
-forever start --pidFile $shared/server.pid -l $shared/forever.log -o $shared/server.log -e $shared/server.log server.js
+./node_modules/.bin/forever start --pidFile $shared/server.pid -l $shared/forever.log -o $shared/server.log -e $shared/server.log server.js
 
