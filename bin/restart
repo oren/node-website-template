@@ -1,13 +1,16 @@
 #!/bin/bash
+set -ue
 
 # script for restarting the server. usualy after deploy
 
-APP=/var/www/node-website-template
+shared=/home/oren/projects/shared
+app=/home/oren/projects/node-website-template
 
-cd $APP/current
-npm install
+test -d "$shared" || mkdir -p $shared
 
-forever stopall
-rm -r $APP/shared/logs/forever.log
-forever start --pidFile $APP/shared/pids/server.pid -l $APP/shared/logs/forever.log -o $APP/shared/logs/server.log -e $APP/shared/logs/server.err $APP/current/server.js
+forever stop server.js
+rm -r $shared/forever.log || true
+
+cd $app
+forever start --pidFile $shared/server.pid -l $shared/forever.log -o $shared/server.log -e $shared/server.log server.js
 
