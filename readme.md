@@ -8,7 +8,7 @@
 
 * [Why not express?](#why-not-express)
 * [Design Philosophy](#design-philosophy)
-* [Folders sturcture](#folders-structure)
+* [Folders structure](#folders-structure)
 * [Modules being used](#modules-being-used)
 * [Run](#run)
 * [Test](#test)
