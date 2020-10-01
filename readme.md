@@ -27,7 +27,7 @@ Sites that follow this approach: (pull requests for more examples are welcome)
 
 When newcomers ask about writing a website or a Web Service they are usualy being told to use express. The problem with express is it uses  middleware/Connect. middleware was a hack invented while solving a problem Node doesn't have. The problem that WSGI solves, which is creating a common interface for writing websites or frameworks that are used by web servers (such as Gunicorn in python or Thin in Ruby). Node doesn't even have those web servers since it comes with a built-in server as part of it's http library.  
 
-middleware forces a pre-declared stack of (req,res,next) functions on top of your routes. It's mostly just not a very useful approach for handling the kinds of things you need a webserver to do - serving static files, parsing POST data, parsing cookies, routing, auth. All can be handled quite nicely just by explicitly passing req and res around as necessary or by returning a stream and piping that to res as the case may warrant.  
+Middleware forces a pre-declared stack of (req,res,next) functions on top of your routes. It's mostly just not a very useful approach for handling the kinds of things you need a webserver to do - serving static files, parsing POST data, parsing cookies, routing, auth. All can be handled quite nicely just by explicitly passing req and res around as necessary or by returning a stream and piping that to res as the case may warrant.  
 
 Also, writing a middleware means you create a module that doesn't work with the Node eco-system. It only works with express/Connect.
 
@@ -138,4 +138,5 @@ I use [deploy](https://github.com/visionmedia/deploy), a 400 lines bash script w
 * Single entry point for dependencies (easy to mock when testing)
 
 Contributions welcome!
+Thanks:)
 
